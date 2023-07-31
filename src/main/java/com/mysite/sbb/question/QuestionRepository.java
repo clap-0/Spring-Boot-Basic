@@ -1,5 +1,6 @@
 package com.mysite.sbb.question;
 
+import com.mysite.sbb.answer.Answer;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -19,5 +20,9 @@ public class QuestionRepository {
 
     public Question findOne(Long id) {
         return em.find(Question.class, id);
+    }
+
+    public void save(Question question) {
+        em.persist(question);
     }
 }
